@@ -3,10 +3,10 @@ param provisionParameters object
 param userAssignedIdentityId string
 
 var resourceBaseName = provisionParameters.resourceBaseName
-var serverfarmsName = contains(provisionParameters, 'functionServerfarmsName') ? provisionParameters['botServerfarmsName'] : '${resourceBaseName}api' // Try to read name for App Service Plan from parameters
+var serverfarmsName = contains(provisionParameters, 'functionServerfarmsName') ? provisionParameters['botServerfarmsName'] : '${resourceBaseName}01api' // Try to read name for App Service Plan from parameters
 var functionAppSKU = contains(provisionParameters, 'functionAppSKU') ? provisionParameters['botfunctionAppSKU'] : 'B1' // Try to read SKU for Azure Web App from parameters
-var functionAppName = contains(provisionParameters, 'SitesName') ? provisionParameters['botSitesName'] : '${resourceBaseName}api' // Try to read name for Azure Web App from parameters
-var storageName = contains(provisionParameters, 'StorageName') ? provisionParameters['botStorageName'] : '${resourceBaseName}api' // Try to read name for Azure Storage from parameters
+var functionAppName = contains(provisionParameters, 'SitesName') ? provisionParameters['botSitesName'] : '${resourceBaseName}01api' // Try to read name for Azure Web App from parameters
+var storageName = contains(provisionParameters, 'StorageName') ? provisionParameters['botStorageName'] : '${resourceBaseName}01api' // Try to read name for Azure Storage from parameters
 var storageSku = contains(provisionParameters, 'StorageSku') ? provisionParameters['botStorageSku'] : 'Standard_LRS' // Try to read SKU for Azure Storage from parameters
 
 // Compute resources for your Web App
